@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seez Loop — Your feedback. Our next move.</title>
+<meta name="description" content="Seez Loop is your direct line to the Seez product team. Share feedback, suggest ideas, report issues and see what we're building next.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 223 223'%3E%3Cpath d='M111.5 0C173.1 0 223 49.9 223 111.5S173.1 223 111.5 223c-33 0-62.7-14.4-83.1-37.2H0v-74.3C0 49.9 49.9 0 111.5 0Z' fill='%231C1228'/%3E%3Cg transform='scale(2.02727)' fill='%239A7CF0'%3E%3Crect x='21.582' y='40.448' width='7.152' height='26.39' rx='3.576'/%3E%3Crect x='82.008' y='40.448' width='7.152' height='26.39' rx='3.576'/%3E%3Crect x='33.668' y='29.596' width='7.152' height='33.543' rx='3.576'/%3E%3Crect x='33.668' y='69.058' width='7.152' height='12.825' rx='3.576'/%3E%3Crect x='69.922' y='28.61' width='7.152' height='12.825' rx='3.576'/%3E%3Crect x='69.922' y='47.354' width='7.152' height='33.543' rx='3.576'/%3E%3Cpath d='M48.551 38.23A6.82 6.82 0 0 1 62.191 38.23V42.246C62.191 54.646 48.551 55.846 48.551 68.246V72.263A6.82 6.82 0 0 0 62.191 72.263V68.246C62.191 55.846 48.551 54.646 48.551 42.246Z' fill='none' stroke='%239A7CF0' stroke-width='5.6'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C1228;
+  --plum:#43246B;
+  --violet:#9A7CF0;
+  --violet-deep:#7A58E0;
+  --lavender:#C6B4EC;
+  --aqua:#5DD8CB;
+  --ground:#F6F3FA;
+  --paper:#FFFFFF;
+  --mute:#8D8499;
+  --ghost:#CFC8DA;
+  --line:rgba(28,18,40,.1);
+  --display:"Outfit",system-ui,sans-serif;
+  --body:"Outfit",system-ui,sans-serif;
+  --gut:clamp(20px,4.4vw,72px);
+  --r-xl:clamp(22px,2.6vw,36px);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:8px}
+.hero :focus-visible,.loop :focus-visible,.end :focus-visible{outline-color:var(--aqua)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.display{font-family:var(--display);font-weight:500;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+.dim{color:var(--ghost)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;z-index:50;top:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:clamp(14px,3vw,40px);
+  padding:8px 8px 8px 16px;background:rgba(255,255,255,.86);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);
+  border-radius:999px;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 10px 30px -12px rgba(28,18,40,.35);white-space:nowrap}
+.lockup{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+.lockup svg{width:32px;height:32px;display:block}
+.lockup span{font-family:var(--display);font-weight:500;font-size:23px;letter-spacing:-.02em;line-height:1;padding-bottom:2px}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-size:14.5px;font-weight:500;text-decoration:none;padding:9px 13px;border-radius:999px;color:#4d445b;transition:background .2s,color .2s}
+.nav-links a:hover{background:rgba(28,18,40,.06);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:13px 22px;font-family:var(--body);font-weight:600;font-size:15px;text-decoration:none;transition:transform .2s cubic-bezier(.2,.8,.2,1),background .2s}
+.btn:active{transform:scale(.97)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--plum)}
+.btn-aqua{background:var(--aqua);color:var(--ink)}
+.btn-aqua:hover{background:#7FE5DA}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.22) inset}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+.nav .btn{padding:10px 18px;font-size:14.5px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;margin:12px;border-radius:var(--r-xl);overflow:hidden;color:#fff;min-height:min(calc(100svh - 24px),980px);display:flex;flex-direction:column;
+  background:
+   radial-gradient(120% 95% at 88% 112%, #8E6EEC 0%, #6A41C9 22%, #43246B 46%, rgba(28,18,40,0) 74%),
+   var(--ink);}
+.hero::after,.grainy::after{content:"";position:absolute;inset:0;background:var(--grain);mix-blend-mode:overlay;opacity:.5;pointer-events:none}
+.hero-top{position:relative;z-index:2;padding:clamp(96px,12vh,132px) var(--gut) 0;display:grid;grid-template-columns:1fr;gap:var(--hgap)}
+.hero{--hgap:clamp(24px,2.4vw,34px)}
+.hero h1{font-size:clamp(44px,6.6vw,104px);letter-spacing:-.04em;line-height:.96}
+.hero h1 span{display:block}
+.hero h1{margin-bottom:-.135em}
+.hero h1 .l2{color:var(--lavender)}
+.hero-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:clamp(24px,5vw,80px);align-items:start}
+.hero-sub{font-size:clamp(17px,1.5vw,21px);line-height:1.45;max-width:58ch;text-wrap:pretty;color:rgba(255,255,255,.82)}
+.hero-sub strong{color:#fff;font-weight:500}
+.hero-links{margin-top:var(--hgap);display:flex;gap:10px;flex-wrap:wrap}
+
+.composer{background:var(--paper);color:var(--ink);border-radius:26px;padding:14px;box-shadow:0 30px 60px -30px rgba(10,4,20,.8)}
+.kinds{display:flex;gap:6px;margin-bottom:10px}
+.kinds button{border:0;background:var(--ground);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:500;color:#5b5268;transition:background .2s,color .2s}
+.kinds button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.field{display:flex;align-items:center;gap:8px;background:var(--ground);border-radius:18px;padding:6px 6px 6px 18px}
+.field input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:16px;color:var(--ink);padding:12px 0;outline:none}
+.field input::placeholder{color:var(--mute)}
+.field:focus-within{box-shadow:0 0 0 2px var(--violet)}
+.send{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--violet-deep);color:#fff;display:grid;place-items:center;transition:transform .2s cubic-bezier(.2,.8,.2,1),background .2s}
+.send:hover{background:var(--ink)}
+.send:active{transform:scale(.92)}
+.composer-note{min-height:22px;margin:10px 6px 2px;font-size:14px;color:var(--mute)}
+.composer.sent .composer-note{color:var(--ink);font-weight:500}
+
+.signal{position:relative;z-index:1;flex:1;min-height:clamp(150px,26vh,270px);margin-top:clamp(22px,4vh,44px)}
+.signal svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* ---------- shared section scaffolding ---------- */
+.wrap{padding-inline:calc(var(--gut) + 12px)}
+.h2{font-size:clamp(34px,4.4vw,68px)}
+
+/* ---------- statement ---------- */
+.voice{padding-block:clamp(90px,14vw,190px) clamp(60px,8vw,110px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,90px);align-items:start}
+.voice h2{font-size:clamp(32px,3.8vw,56px);position:sticky;top:120px}
+.reveal{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.6vw,40px);line-height:1.16;letter-spacing:-.03em}
+.reveal .w{color:var(--ghost);transition:color .35s ease}
+.reveal .w.on{color:var(--ink)}
+.voice-end{margin-top:clamp(28px,4vw,48px);font-size:clamp(17px,1.4vw,20px);max-width:44ch;color:#4d445b}
+.voice-end strong{color:var(--ink);font-weight:600}
+
+.three{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-bottom:clamp(70px,10vw,140px)}
+.three div{padding:26px clamp(16px,2.4vw,36px) 0 0}
+.three div+div{border-left:1px solid var(--line);padding-left:clamp(16px,2.4vw,36px)}
+.three h3{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.5vw,36px);letter-spacing:-.03em;line-height:1.05;margin-bottom:10px}
+.three p{color:#5b5268;max-width:30ch;font-size:16px}
+
+/* ---------- the loop ---------- */
+.loop{position:relative;margin:12px;border-radius:var(--r-xl);background:var(--ink);color:#fff}
+.loop-scroll{height:360vh}
+.loop-sticky{position:sticky;top:0;height:100vh;min-height:620px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;padding:clamp(84px,11vh,120px) var(--gut) clamp(30px,5vh,56px);gap:clamp(20px,4vw,70px)}
+.loop-art{height:100%;min-height:0;display:flex;align-items:center;justify-content:center}
+.loop-art svg{height:min(100%,640px);width:auto;max-width:100%;overflow:visible}
+.loop-art .num{font-family:var(--display);font-weight:600;font-size:2.7px;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.loop-art .mk{fill:rgba(255,255,255,.28);transition:fill .3s}
+.loop-art .mk.on{fill:#fff}
+.loop-copy h2{font-size:clamp(32px,3.8vw,58px);margin-bottom:clamp(22px,4vh,44px)}
+.stages{list-style:none;margin:0;padding:0;counter-reset:s}
+.stages li{border-top:1px solid rgba(255,255,255,.14);padding:16px 0;display:grid;grid-template-columns:54px 1fr;color:rgba(255,255,255,.42);transition:color .3s}
+.stages li.on{color:#fff}
+.stages .n{font-family:var(--display);font-size:16px;font-weight:500;padding-top:5px;font-variant-numeric:tabular-nums}
+.stages h3{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.2vw,32px);letter-spacing:-.03em;line-height:1.1}
+.stages p{grid-column:2;font-size:16px;line-height:1.45;max-width:42ch;color:rgba(255,255,255,.74);display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1),margin .45s}
+.stages p>span{overflow:hidden}
+.stages li.on p{grid-template-rows:1fr;margin-top:8px}
+.ticket{margin-top:clamp(18px,3vh,30px);background:rgba(255,255,255,.07);box-shadow:0 0 0 1px rgba(255,255,255,.1) inset;border-radius:20px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:520px}
+.ticket small{display:block;font-size:13px;color:rgba(255,255,255,.55);margin-bottom:3px}
+.ticket b{font-weight:500;font-size:16px}
+.status{flex:none;font-size:13.5px;font-weight:600;border-radius:999px;padding:7px 13px;background:rgba(255,255,255,.12);color:#fff;transition:background .3s,color .3s}
+.status[data-s="3"]{background:var(--violet);color:var(--ink)}
+.status[data-s="4"],.status[data-s="5"]{background:var(--aqua);color:var(--ink)}
+.thats{margin-top:18px;font-family:var(--display);font-weight:500;font-size:clamp(22px,2.2vw,32px);letter-spacing:-.03em;opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s}
+.thats.on{opacity:1;transform:none}
+
+/* ---------- four ways ---------- */
+.ways{padding-block:clamp(90px,13vw,180px) clamp(60px,8vw,120px)}
+.ways-head{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:30px;align-items:end;margin-bottom:clamp(34px,5vw,64px)}
+.ways-head p{color:#5b5268;max-width:32ch;justify-self:end}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{position:relative;border-radius:var(--r-xl);padding:clamp(22px,2.6vw,36px);display:flex;flex-direction:column;min-height:440px;overflow:hidden}
+.card h3{font-family:var(--display);font-weight:500;font-size:clamp(30px,3.2vw,46px);letter-spacing:-.035em;line-height:1}
+.card .ask{margin-top:12px;max-width:28ch;font-size:17px}
+.card .go{margin-top:auto;padding-top:26px;position:relative;z-index:1}
+.card .ui{position:relative;z-index:1;margin-top:26px}
+.c-feedback{grid-column:span 5;color:#fff;background:radial-gradient(130% 100% at 100% 100%,#B9A2F5 0%,#8A69EA 34%,#5B34B8 68%,#43246B 100%)}
+.c-feedback .ask{color:rgba(255,255,255,.86)}
+.c-ideas{grid-column:span 7;background:var(--paper)}
+.c-issues{grid-column:span 5;background:var(--ink);color:#fff}
+.c-issues .ask{color:rgba(255,255,255,.74)}
+.c-roadmap{grid-column:span 7;background:#E7DFF7}
+.c-ideas .ask,.c-roadmap .ask{color:#5b5268}
+
+.moods{display:flex;flex-wrap:wrap;gap:8px}
+.moods button{border:0;border-radius:999px;padding:11px 16px;font-size:15px;font-weight:500;background:rgba(255,255,255,.16);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.25) inset;transition:background .2s,color .2s,transform .2s}
+.moods button:active{transform:scale(.97)}
+.moods button[aria-pressed="true"]{background:#fff;color:var(--ink)}
+.mood-reply{margin-top:14px;min-height:48px;font-family:var(--display);font-size:22px;line-height:1.1;letter-spacing:-.02em}
+
+.ideas{list-style:none;margin:0;padding:0;position:relative}
+.ideas li{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+.ideas li:last-child{border-bottom:1px solid var(--line)}
+.vote{flex:none;width:58px;height:58px;border-radius:16px;border:0;background:var(--ground);display:grid;place-items:center;align-content:center;gap:1px;font-weight:600;font-size:15px;font-variant-numeric:tabular-nums;transition:background .2s,color .2s,transform .2s cubic-bezier(.2,.8,.2,1)}
+.vote svg{display:block}
+.vote:hover{background:#E7DFF7}
+.vote:active{transform:scale(.94)}
+.vote[aria-pressed="true"]{background:var(--violet-deep);color:#fff}
+.ideas .t{font-weight:500;font-size:16.5px;line-height:1.3}
+.ideas .p{font-size:13.5px;color:var(--mute)}
+
+.issue{background:rgba(255,255,255,.07);box-shadow:0 0 0 1px rgba(255,255,255,.1) inset;border-radius:20px;padding:18px}
+.issue b{display:block;font-weight:500;font-size:16.5px;line-height:1.3;margin-bottom:16px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:rgba(255,255,255,.45)}
+.steps li::before{content:"";display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.16);margin-bottom:8px}
+.steps li.done{color:#fff}
+.steps li.done::before{background:var(--lavender)}
+.steps li.now::before{background:var(--aqua)}
+.steps li.now{color:#fff}
+
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.lane{background:rgba(255,255,255,.6);border-radius:20px;padding:14px;min-height:150px}
+.lane h4{margin:0 0 10px;font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:7px}
+.lane h4 i{width:6px;height:16px;border-radius:3px;background:var(--ghost)}
+.lane:nth-child(2) h4 i{background:var(--violet)}
+.lane:nth-child(3) h4 i{background:var(--aqua)}
+.lane span{display:block;background:#fff;border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.3;font-weight:500;margin-top:6px}
+
+/* ---------- products ---------- */
+.family{padding-block:clamp(40px,6vw,90px) clamp(90px,12vw,170px)}
+.family-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:30px;align-items:end;margin-bottom:clamp(30px,4vw,56px)}
+.family-head p{color:#5b5268;max-width:36ch;justify-self:end}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(10px,2vw,28px);border-top:1px solid var(--line);padding:clamp(12px,1.6vw,22px) 0;color:var(--ghost);transition:color .25s}
+.rows li:last-child{border-bottom:1px solid var(--line)}
+.rows li:hover,.rows li.loop-row{color:var(--ink)}
+.rows i{width:10px;height:clamp(34px,4.6vw,64px);border-radius:5px;background:var(--c);transform:scaleY(.45);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.rows li:hover i,.rows li.loop-row i{transform:scaleY(1)}
+.rows b{font-family:var(--display);font-weight:500;font-size:clamp(40px,6.6vw,104px);letter-spacing:-.045em;line-height:1}
+.rows span{font-size:clamp(16px,1.5vw,21px);color:#5b5268}
+.rows li.loop-row span{color:var(--ink);font-weight:500}
+.family-note{margin-top:28px;font-family:var(--display);font-weight:500;font-size:clamp(22px,2.3vw,34px);letter-spacing:-.03em;line-height:1.1;max-width:30ch;text-wrap:balance}
+
+/* ---------- end ---------- */
+.end{position:relative;margin:12px;border-radius:var(--r-xl);overflow:hidden;color:#fff;
+  background:radial-gradient(110% 80% at 12% -12%, #8E6EEC 0%, #6A41C9 20%, #43246B 44%, rgba(28,18,40,0) 72%),var(--ink)}
+.end-in{position:relative;z-index:1;padding:clamp(80px,12vw,170px) var(--gut) 0}
+.end-top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:end;gap:28px}
+.end h2{font-size:clamp(42px,6.2vw,100px);letter-spacing:-.04em;line-height:.96;max-width:11ch}
+.end-row{display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding-bottom:.5em}
+.end-row p{font-size:clamp(17px,1.5vw,21px);color:rgba(255,255,255,.82);max-width:56ch;text-wrap:balance}
+.foot{margin-top:clamp(80px,11vw,150px);padding-top:22px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 30px;font-size:14.5px;color:rgba(255,255,255,.62)}
+.foot nav{display:flex;gap:22px;flex-wrap:wrap}
+.foot a{text-decoration:none;color:rgba(255,255,255,.86)}
+.foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.giant{display:flex;justify-content:center;white-space:nowrap;font-family:var(--display);font-weight:500;letter-spacing:-.05em;line-height:1;font-size:clamp(150px,44.5vw,760px);margin:clamp(0px,1vw,16px) 0 -.2em 0;text-indent:-.078em;color:transparent;
+  background:linear-gradient(180deg,rgba(198,180,236,.62),rgba(154,124,240,.1) 82%);-webkit-background-clip:text;background-clip:text;user-select:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .nav-links{display:none}
+  .nav{gap:18px}
+  .end-top{grid-template-columns:1fr}
+  .hero-row{grid-template-columns:1fr}
+  .voice{grid-template-columns:1fr}
+  .voice h2{position:static}
+  .three{grid-template-columns:1fr}
+  .three div{padding:20px 0}
+  .three div+div{border-left:0;border-top:1px solid var(--line);padding-left:0}
+  .loop-scroll{height:auto}
+  .loop-sticky{position:static;height:auto;min-height:0;grid-template-columns:1fr;padding-top:64px}
+  .loop-art{height:300px}
+  .stages li{color:#fff}
+  .stages p{grid-template-rows:1fr;margin-top:8px}
+  .thats{opacity:1;transform:none}
+  .ways-head,.family-head{grid-template-columns:1fr}
+  .ways-head p,.family-head p{justify-self:start}
+  .bento{grid-template-columns:1fr}
+  .card{grid-column:auto !important;min-height:0}
+  .card .go{margin-top:26px}
+  .rows li{grid-template-columns:18px 1fr;row-gap:2px}
+  .rows span{grid-column:2}
+}
+@media (max-width:520px){
+  .lanes{grid-template-columns:1fr}
+  .lane{min-height:0}
+  .lockup span{font-size:21px}
+  .ticket{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+  .reveal .w{color:var(--ink)}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="21.582" y1="0" x2="89.16" y2="0">
+      <stop offset="0" stop-color="#9A7CF0"/><stop offset="1" stop-color="#C6B4EC"/>
+    </linearGradient>
+    <symbol id="mark" viewBox="0 0 223 223">
+      <path d="M111.501 0C173.082 0 223.001 49.92 223.001 111.501C223.001 173.082 173.082 223.001 111.501 223.001C78.472 223.001 48.796 208.627 28.393 185.834H0V111.501C0 49.92 49.92 0 111.501 0Z" fill="#1C1228"/>
+      <g transform="scale(2.02727)">
+        <rect x="21.582" y="40.448" width="7.152" height="26.39" rx="3.576" fill="url(#lg)"/>
+        <rect x="82.008" y="40.448" width="7.152" height="26.39" rx="3.576" fill="url(#lg)"/>
+        <rect x="33.668" y="29.596" width="7.152" height="33.543" rx="3.576" fill="url(#lg)"/>
+        <rect x="33.668" y="69.058" width="7.152" height="12.825" rx="3.576" fill="url(#lg)"/>
+        <rect x="69.922" y="28.61" width="7.152" height="12.825" rx="3.576" fill="url(#lg)"/>
+        <rect x="69.922" y="47.354" width="7.152" height="33.543" rx="3.576" fill="url(#lg)"/>
+        <path d="M48.551 38.23A6.82 6.82 0 0 1 62.191 38.23L62.191 42.246C62.191 54.646 48.551 55.846 48.551 68.246L48.551 72.263A6.82 6.82 0 0 0 62.191 72.263L62.191 68.246C62.191 55.846 48.551 54.646 48.551 42.246Z" fill="none" stroke="url(#lg)" stroke-width="5.6" stroke-linejoin="round"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <a class="lockup" href="#top" aria-label="Seez Loop, back to top">
+    <svg aria-hidden="true"><use href="#mark"/></svg><span>loop</span>
+  </a>
+  <nav class="nav-links" aria-label="Sections">
+    <a href="#the-loop">How it works</a>
+    <a href="#ways">What you can do</a>
+  </nav>
+  <a class="btn btn-ink" href="#share" data-focus-composer>Share feedback</a>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="share">
+  <div class="hero-top">
+    <h1 class="display"><span>Your feedback.</span><span class="l2">Our next move.</span></h1>
+    <div class="hero-row">
+      <div>
+        <p class="hero-sub"><strong>Seez Loop is your direct line to the people building Seez.</strong> Share feedback, suggest ideas, report issues and see what we're building next.</p>
+        <div class="hero-links">
+          <a class="btn btn-aqua" href="#share" data-focus-composer>Share feedback</a>
+          <a class="btn btn-ghost" href="#ways">Explore ideas</a>
+        </div>
+      </div>
+      <form class="composer" id="composer" novalidate>
+        <div class="kinds" role="group" aria-label="What are you sending?">
+          <button type="button" data-kind="feedback" aria-pressed="true">Feedback</button>
+          <button type="button" data-kind="idea" aria-pressed="false">Idea</button>
+          <button type="button" data-kind="issue" aria-pressed="false">Issue</button>
+        </div>
+        <div class="field">
+          <label class="sr" for="say">Your message to the Seez product team</label>
+          <input id="say" type="text" autocomplete="off" placeholder="What's working, and what isn't?">
+          <button class="send" type="submit" aria-label="Send to the Seez product team">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 15V3M9 3L4 8M9 3l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <p class="composer-note" id="note" aria-live="polite">Goes straight to the Seez product team.</p>
+      </form>
+    </div>
+  </div>
+  <div class="signal" id="signal" aria-hidden="true"><svg id="signalSvg"></svg></div>
+</section>
+
+<!-- ================= VOICE ================= -->
+<section class="wrap voice">
+  <h2 class="display">Built with you, <span class="dim">not just for you.</span></h2>
+  <div>
+    <p class="reveal" id="reveal">The best ideas don't always come from inside the product team. They come from the people using Seez every day: the teams speaking to customers, managing leads, booking appointments, selling vehicles and keeping dealerships moving.</p>
+    <p class="voice-end">Loop gives you a direct line to the people building Seez. <strong>Tell us what you think. We'll take it from there.</strong></p>
+  </div>
+</section>
+<div class="wrap">
+  <div class="three">
+    <div><h3>We listen.</h3><p>You get a direct line to the people building Seez.</p></div>
+    <div><h3>We act.</h3><p>Feedback is reviewed, prioritised and turned into product improvements.</p></div>
+    <div><h3>You can see it.</h3><p>Follow any idea from the day it's sent to the day it ships.</p></div>
+  </div>
+</div>
+
+<!-- ================= THE LOOP ================= -->
+<section class="loop" id="the-loop">
+  <div class="loop-scroll" id="loopScroll">
+    <div class="loop-sticky">
+      <div class="loop-art" aria-hidden="true">
+        <svg viewBox="15 22 80.7 66.5" id="loopSvg">
+          <g fill="rgba(255,255,255,.1)">
+            <rect x="21.582" y="40.448" width="7.152" height="26.39" rx="3.576"/>
+            <rect x="82.008" y="40.448" width="7.152" height="26.39" rx="3.576"/>
+            <rect x="33.668" y="29.596" width="7.152" height="33.543" rx="3.576"/>
+            <rect x="33.668" y="69.058" width="7.152" height="12.825" rx="3.576"/>
+            <rect x="69.922" y="28.61" width="7.152" height="12.825" rx="3.576"/>
+            <rect x="69.922" y="47.354" width="7.152" height="33.543" rx="3.576"/>
+          </g>
+          <path id="loopTrack" d="M48.551 38.23A6.82 6.82 0 0 1 62.191 38.23L62.191 42.246C62.191 54.646 48.551 55.846 48.551 68.246L48.551 72.263A6.82 6.82 0 0 0 62.191 72.263L62.191 68.246C62.191 55.846 48.551 54.646 48.551 42.246Z" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="5.6" stroke-linejoin="round"/>
+          <path id="loopProg" fill="none" stroke="url(#lg)" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <g id="loopMarks"></g>
+          <circle id="loopDot" r="1.5" fill="#fff"/>
+        </svg>
+      </div>
+      <div class="loop-copy">
+        <h2 class="display">It's a continuous <span style="color:var(--lavender)">conversation.</span></h2>
+        <ol class="stages" id="stages">
+          <li class="on"><span class="n">01</span><h3>Tell us</h3><p><span>Share feedback, suggest an idea or report something that isn't working.</span></p></li>
+          <li><span class="n">02</span><h3>We listen</h3><p><span>We review it, understand it and weigh it against what we're hearing from customers across Seez.</span></p></li>
+          <li><span class="n">03</span><h3>We build</h3><p><span>The ideas and improvements that matter most make their way onto the product roadmap.</span></p></li>
+          <li><span class="n">04</span><h3>You see it</h3><p><span>Follow progress, find out what's new and see the difference your feedback made.</span></p></li>
+        </ol>
+        <div class="ticket">
+          <div><small>Idea from a sales manager</small><b>Assign new leads to a team in bulk</b></div>
+          <span class="status" id="status" data-s="1">Sent</span>
+        </div>
+        <p class="thats" id="thats">Then it starts again. That's the Loop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOUR WAYS ================= -->
+<section class="wrap ways" id="ways">
+  <div class="ways-head">
+    <h2 class="display h2">One place. <span class="dim">Four ways to make a difference.</span></h2>
+    <p>Everything below is live to try. Pick a mood, cast a vote.</p>
+  </div>
+  <div class="bento">
+
+    <article class="card c-feedback grainy">
+      <h3>Feedback</h3>
+      <p class="ask">Something you love? Something that drives you mad?</p>
+      <div class="ui">
+        <div class="moods" role="group" aria-label="How is Seez working for you?">
+          <button type="button" aria-pressed="false" data-r="Good to hear. Tell us what's working so we keep it.">Love it</button>
+          <button type="button" aria-pressed="false" data-r="Fair. What would move it from fine to great?">It's fine</button>
+          <button type="button" aria-pressed="false" data-r="We want to know. What's getting in your way?">Drives me mad</button>
+        </div>
+        <p class="mood-reply" id="moodReply" aria-live="polite"></p>
+      </div>
+      <div class="go"><a class="btn btn-aqua" href="#share" data-focus-composer data-set-kind="feedback">Tell us</a></div>
+    </article>
+
+    <article class="card c-ideas">
+      <h3>Ideas</h3>
+      <p class="ask">Have an idea that would make your team's day easier? Put it forward and let others vote.</p>
+      <div class="ui">
+        <ul class="ideas" id="ideas">
+          <li data-v="48"><button class="vote" type="button" aria-pressed="false"></button><div><div class="t">Reply to WhatsApp leads from the Assist inbox</div><div class="p">Assist</div></div></li>
+          <li data-v="31"><button class="vote" type="button" aria-pressed="false"></button><div><div class="t">Assign new leads to a team in bulk</div><div class="p">Connect</div></div></li>
+          <li data-v="30"><button class="vote" type="button" aria-pressed="false"></button><div><div class="t">Service reminders by SMS as well as email</div><div class="p">Serve</div></div></li>
+          <li data-v="12"><button class="vote" type="button" aria-pressed="false"></button><div><div class="t">Export campaign results as a spreadsheet</div><div class="p">Reach</div></div></li>
+        </ul>
+      </div>
+      <div class="go"><a class="btn btn-ink" href="#share" data-focus-composer data-set-kind="idea">Share an idea</a></div>
+    </article>
+
+    <article class="card c-issues">
+      <h3>Issues</h3>
+      <p class="ask">Something not working quite right? Report it and watch it get fixed.</p>
+      <div class="ui">
+        <div class="issue">
+          <b>Appointment slots show in the wrong time zone</b>
+          <ol class="steps">
+            <li class="done">Reported</li><li class="done">Confirmed</li><li class="now">Fixing</li><li>Fixed</li>
+          </ol>
+        </div>
+      </div>
+      <div class="go"><a class="btn btn-ghost" href="#share" data-focus-composer data-set-kind="issue">Report an issue</a></div>
+    </article>
+
+    <article class="card c-roadmap">
+      <h3>Roadmap</h3>
+      <p class="ask">Wondering what's coming next? See what's planned, what's being built and what's already shipped.</p>
+      <div class="ui">
+        <div class="lanes">
+          <div class="lane"><h4><i></i>Next</h4><span>Trade-in valuation in chat</span><span>Shared team inbox</span></div>
+          <div class="lane"><h4><i></i>In progress</h4><span>Bulk lead assignment</span></div>
+          <div class="lane"><h4><i></i>Shipped</h4><span>Service reminders by SMS</span><span>Faster lead search</span></div>
+        </div>
+      </div>
+      <div class="go"><a class="btn btn-ink" href="#the-loop">See how ideas move</a></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+
+
+</main>
+
+<!-- ================= END ================= -->
+<footer class="end grainy">
+  <div class="end-in">
+    <div class="end-top">
+      <h2 class="display">Have something to say?</h2>
+      <div class="end-row">
+        <p>Good, bad, broken or brilliant. We want to hear it.</p>
+        <a class="btn btn-aqua" href="#share" data-focus-composer>Share your feedback</a>
+      </div>
+    </div>
+    <div class="foot">
+      <span>Your feedback. Our next move.</span>
+      <nav aria-label="Footer">
+        <a href="https://seez.co">seez.co</a>
+        <a href="#the-loop">How it works</a>
+        <a href="#ways">What you can do</a>
+      </nav>
+      <span>© 2026 Seez</span>
+    </div>
+    <span class="giant" aria-hidden="true">loop</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (n, a = {}) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const EIGHT = 'M48.551 38.23A6.82 6.82 0 0 1 62.191 38.23L62.191 42.246C62.191 54.646 48.551 55.846 48.551 68.246L48.551 72.263A6.82 6.82 0 0 0 62.191 72.263L62.191 68.246C62.191 55.846 48.551 54.646 48.551 42.246Z';
+
+  /* ---------- hero signal: the logo's bars, stretched across the page ---------- */
+  const host = document.getElementById('signal'), svg = document.getElementById('signalSvg');
+  let bars = [], S = 1, W = 0, H = 0, cy = 0, cx = 0, pointerX = -9999, pulse = null, dot, eightPath, eightLen = 0;
+  function build() {
+    W = host.clientWidth; H = host.clientHeight;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.innerHTML = '';
+    S = (H * 0.86) / 53.273;                       // logo units → px, the 8 fills the band
+    cy = H / 2; cx = W < 900 ? W / 2 : W * 0.7;
+    const defs = el('defs'), g = el('linearGradient', { id: 'sg', gradientUnits: 'userSpaceOnUse', x1: 0, y1: 0, x2: W, y2: 0 });
+    [['0', '#9A7CF0'], ['.55', '#C6B4EC'], ['1', '#F3EEFF']].forEach(([o, c]) => g.append(el('stop', { offset: o, 'stop-color': c })));
+    defs.append(g); svg.append(defs);
+    const bw = 7.152 * S, pitch = 12.086 * S, inner = 18.127 * S;
+    bars = [];
+    const add = (x, side, k) => {
+      const a = el('rect', { x: x - bw / 2, width: bw, rx: bw / 2, fill: 'url(#sg)' });
+      const b = el('rect', { x: x - bw / 2, width: bw, rx: bw / 2, fill: 'url(#sg)' });
+      svg.append(a, b);
+      bars.push({ x, a, b, side, k, split: k === 0 || (k * 7 + (side > 0 ? 3 : 0)) % 4 === 1, up: (k + (side > 0 ? 1 : 0)) % 2 === 0, ph: k * 0.62 + (side > 0 ? 1.7 : 0) });
+    };
+    for (let k = 0, x = cx - inner; x > -bw; k++, x -= pitch) add(x, -1, k);
+    for (let k = 0, x = cx + inner; x < W + bw; k++, x += pitch) add(x, 1, k);
+    eightPath = el('path', { d: EIGHT, fill: 'none', stroke: 'url(#sg)', 'stroke-width': 5.6, 'stroke-linejoin': 'round',
+      transform: `translate(${cx - 55.371 * S} ${cy - 55.2465 * S}) scale(${S})`, 'vector-effect': 'none' });
+    eightPath.setAttribute('stroke', '#EDE6FF');
+    dot = el('circle', { r: 1.45 * S, fill: '#43246B' });
+    svg.append(eightPath, dot);
+    eightLen = eightPath.getTotalLength();
+    frame(performance.now(), true);
+  }
+  function frame(t, once) {
+    const T = t / 1000, bw = 7.152 * S, gap = 5.92 * S, maxH = 53.273 * S, minH = bw * 1.6;
+    for (const b of bars) {
+      let e = 0.5 + 0.28 * Math.sin(b.ph - T * 0.9) + 0.2 * Math.sin(b.ph * 0.37 + T * 0.55 + b.side);
+      e *= 0.5 + 0.5 * Math.exp(-b.k / 14);                         // calmer toward the edges
+      if (b.k === 0) e = 0.92 + 0.08 * Math.sin(T * 0.8 + b.side);  // the two bars beside the 8 stay tall, as in the mark
+      if (b.k === 1) e = 0.42 + 0.08 * Math.sin(T * 0.8 + 1 + b.side);
+      const d = (b.x - pointerX) / (S * 30); e += 0.55 * Math.exp(-d * d);
+      if (pulse) { const p = (b.x - pulse.x) / (S * 26); e += 0.7 * Math.exp(-p * p); }
+      e = Math.max(0, Math.min(1, e));
+      const h = minH + (maxH - minH) * e;
+      if (b.split && h > bw * 4) {
+        const short = Math.max(bw, h * 0.24), long = h - short - gap, top = cy - h / 2;
+        const [ay, ah, by, bh] = b.up ? [top, short, top + short + gap, long] : [top, long, top + long + gap, short];
+        b.a.setAttribute('y', ay); b.a.setAttribute('height', ah);
+        b.b.setAttribute('y', by); b.b.setAttribute('height', bh); b.b.style.display = '';
+      } else {
+        b.a.setAttribute('y', cy - h / 2); b.a.setAttribute('height', h); b.b.style.display = 'none';
+      }
+    }
+    if (pulse) { pulse.x += pulse.v; if (pulse.x > W + 300) pulse = null; }
+    const lap = pulse ? 2.2 : 7, pt = eightPath.getPointAtLength(((T / lap) % 1) * eightLen);
+    dot.setAttribute('cx', cx + (pt.x - 55.371) * S); dot.setAttribute('cy', cy + (pt.y - 55.2465) * S);
+    if (!once && !reduce && heroVisible) requestAnimationFrame(frame);
+  }
+  let heroVisible = true;
+  new IntersectionObserver(([e]) => { const was = heroVisible; heroVisible = e.isIntersecting; if (heroVisible && !was && !reduce) requestAnimationFrame(frame); }).observe(host);
+  build(); if (!reduce) requestAnimationFrame(frame);
+  let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(build, 120); });
+  const hero = document.querySelector('.hero');
+  hero.addEventListener('pointermove', e => { pointerX = e.clientX - host.getBoundingClientRect().left; });
+  hero.addEventListener('pointerleave', () => { pointerX = -9999; });
+
+  /* ---------- composer ---------- */
+  const form = document.getElementById('composer'), input = document.getElementById('say'), note = document.getElementById('note');
+  const kinds = { feedback: ["What's working, and what isn't?", 'Feedback'], idea: ['What would make your day easier?', 'Idea'], issue: ["What isn't working as expected?", 'Issue'] };
+  let kind = 'feedback';
+  function setKind(k) {
+    kind = k; input.placeholder = kinds[k][0];
+    form.querySelectorAll('[data-kind]').forEach(b => b.setAttribute('aria-pressed', b.dataset.kind === k));
+  }
+  form.querySelectorAll('[data-kind]').forEach(b => b.addEventListener('click', () => { setKind(b.dataset.kind); input.focus(); }));
+  input.addEventListener('input', () => { if (form.classList.contains('sent')) { form.classList.remove('sent'); note.textContent = 'Goes straight to the Seez product team.'; } });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!input.value.trim()) { note.textContent = 'Write a line first, then send.'; input.focus(); return; }
+    input.value = ''; form.classList.add('sent');
+    note.textContent = kinds[kind][1] + " sent. It's in the Loop, and we'll take it from there.";
+    pulse = { x: -200, v: Math.max(14, W / 70) };
+    if (reduce) { pulse = null; }
+  });
+  document.querySelectorAll('[data-focus-composer]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); if (a.dataset.setKind) setKind(a.dataset.setKind);
+    document.getElementById('top').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    setTimeout(() => input.focus({ preventScroll: true }), reduce ? 0 : 650);
+  }));
+
+  /* ---------- statement: words fill in as you read down ---------- */
+  const rev = document.getElementById('reveal');
+  rev.innerHTML = rev.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ');
+  const words = [...rev.querySelectorAll('.w')];
+
+  /* ---------- the loop: scroll drives one lap of the 8 ---------- */
+  const track = document.getElementById('loopTrack'), prog = document.getElementById('loopProg'), marks = document.getElementById('loopMarks'),
+        ldot = document.getElementById('loopDot'), scroller = document.getElementById('loopScroll'),
+        stages = [...document.querySelectorAll('#stages li')], status = document.getElementById('status'), thats = document.getElementById('thats');
+  const L = track.getTotalLength(), start = Math.PI * 6.82 / 2 + L / 8;   // an eighth past the top of the 8
+  prog.setAttribute('d', EIGHT + EIGHT);
+  const mk = [0, 1, 2, 3].map(i => {
+    const p = track.getPointAtLength((start + i * L / 4) % L), g = el('g');
+    const c = el('circle', { cx: p.x, cy: p.y, r: 2.05, class: 'mk' }), tx = el('text', { x: p.x, y: p.y + .1, class: 'num' });
+    tx.textContent = i + 1; g.append(c, tx); marks.append(g); return c;
+  });
+  const labels = ['Sent', 'In review', 'In progress', 'Shipped', 'Shipped'];
+  let lastStage = -1;
+  function setLoop(p) {
+    prog.setAttribute('stroke-dasharray', `${Math.max(.01, p * L)} ${3 * L}`);
+    prog.setAttribute('stroke-dashoffset', -start);
+    const pt = track.getPointAtLength((start + p * L) % L);
+    ldot.setAttribute('cx', pt.x); ldot.setAttribute('cy', pt.y);
+    const s = Math.min(3, Math.floor(p * 4 + 0.02));
+    mk.forEach((c, i) => c.classList.toggle('on', i <= s));
+    thats.classList.toggle('on', p > 0.965);
+    if (s !== lastStage) {
+      lastStage = s; stages.forEach((li, i) => li.classList.toggle('on', i === s));
+      status.textContent = labels[s]; status.dataset.s = s + 1;
+    }
+  }
+  const mobile = matchMedia('(max-width: 900px)');
+  function onScroll() {
+    const vh = innerHeight;
+    // statement
+    const r = rev.getBoundingClientRect(), q = Math.max(0, Math.min(1, (vh * 0.82 - r.top) / (r.height + vh * 0.32)));
+    const n = reduce ? words.length : Math.round(q * words.length);
+    words.forEach((w, i) => w.classList.toggle('on', i < n));
+    // loop
+    if (!mobile.matches && !reduce) {
+      const b = scroller.getBoundingClientRect();
+      setLoop(Math.max(0, Math.min(1, -b.top / (b.height - vh))));
+    }
+  }
+  addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll);
+  // phones and reduced motion: no pinned scroll, so the lap plays on its own (or sits complete)
+  if (reduce) setLoop(1);
+  else {
+    let t0 = null;
+    const auto = t => { if (mobile.matches) { t0 ??= t; setLoop(((t - t0) / 9000) % 1); } else t0 = null; requestAnimationFrame(auto); };
+    requestAnimationFrame(auto);
+  }
+  onScroll();
+
+  /* ---------- feedback moods ---------- */
+  const moodReply = document.getElementById('moodReply');
+  document.querySelectorAll('.moods button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.moods button').forEach(o => o.setAttribute('aria-pressed', o === b));
+    moodReply.textContent = b.dataset.r;
+  }));
+
+  /* ---------- ideas: vote, and the list re-ranks ---------- */
+  const list = document.getElementById('ideas');
+  const arrow = '<svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true"><path d="M1.5 7.5 7 2l5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  [...list.children].forEach(li => {
+    const btn = li.querySelector('.vote'), title = li.querySelector('.t').textContent;
+    const paint = () => { btn.innerHTML = arrow + `<span>${li.dataset.v}</span>`; btn.setAttribute('aria-label', `${btn.getAttribute('aria-pressed') === 'true' ? 'Remove your vote from' : 'Vote for'} “${title}”, ${li.dataset.v} votes`); };
+    paint();
+    btn.addEventListener('click', () => {
+      const on = btn.getAttribute('aria-pressed') !== 'true';
+      btn.setAttribute('aria-pressed', on); li.dataset.v = +li.dataset.v + (on ? 1 : -1); paint();
+      const before = new Map([...list.children].map(n => [n, n.getBoundingClientRect().top]));
+      [...list.children].sort((a, b) => b.dataset.v - a.dataset.v).forEach(n => list.append(n));
+      if (!reduce) [...list.children].forEach(n => {
+        const dy = before.get(n) - n.getBoundingClientRect().top;
+        if (dy) n.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], { duration: 420, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      });
+      btn.focus();
+    });
+  });
+})();
+</script>
+</body>
+</html>

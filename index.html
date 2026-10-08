@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seez Loop — three directions</title>
+<style>
+html,body{margin:0;height:100%;background:#1C1228;font:500 14px/1 system-ui,sans-serif}
+body{display:flex;flex-direction:column}
+nav{flex:none;display:flex;align-items:center;gap:6px;padding:8px 10px;color:#CFC8DA}
+nav b{color:#fff;font-weight:600;margin-right:10px}
+button{font:inherit;color:#CFC8DA;background:none;border:0;border-radius:999px;padding:9px 14px;cursor:pointer}
+button:hover{background:rgba(255,255,255,.08)}
+button[aria-pressed="true"]{background:#fff;color:#1C1228}
+button:focus-visible,a:focus-visible{outline:2px solid #5DD8CB;outline-offset:2px}
+a{margin-left:auto;color:#CFC8DA;padding:9px 12px}
+iframe{flex:1;width:100%;border:0;background:#fff}
+@media (max-width:640px){nav b{display:none}button span{display:none}}
+</style>
+</head>
+<body>
+<nav aria-label="Design directions">
+  <b>Seez Loop</b>
+  <button data-v="v1.html" aria-pressed="true">1<span> · Signal (dark violet)</span></button>
+  <button data-v="v2.html" aria-pressed="false">2<span> · Board (white, product first)</span></button>
+  <button data-v="v3.html" aria-pressed="false">3<span> · Night board (black, logo colours)</span></button>
+  <a id="open" href="v1.html" target="_blank" rel="noopener">Open full page</a>
+</nav>
+<iframe id="f" src="v1.html" title="Seez Loop website direction"></iframe>
+<script>
+const f = document.getElementById('f'), o = document.getElementById('open'), bs = [...document.querySelectorAll('button')];
+const show = v => { f.src = v + '?t=' + Date.now(); o.href = v; bs.forEach(b => b.setAttribute('aria-pressed', b.dataset.v === v)); history.replaceState(null, '', '#' + v.slice(0, 2)); };
+bs.forEach(b => b.addEventListener('click', () => show(b.dataset.v)));
+if (/^#v[123]$/.test(location.hash)) show(location.hash.slice(1) + '.html');
+addEventListener('keydown', e => { if (['1', '2', '3'].includes(e.key) && !e.metaKey && !e.ctrlKey) show('v' + e.key + '.html'); });
+</script>
+</body>
+</html>
